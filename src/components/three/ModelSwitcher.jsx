@@ -35,11 +35,13 @@ const moveGroup = (group, x) => {
 }
 
 const ModelSwitcher = ({scale, isMobile}) => {
+    const SCALE_LARGE_DESKTOP = 0.08;
+    const SCALE_LARGE_MOBILE = 0.05;
 
     const smallMacbookRef = useRef()
     const largeMacbookRef = useRef()
 
-    const showlargeMacbook = scale === 0.08 || scale === 0.05;
+    const showlargeMacbook = scale === SCALE_LARGE_DESKTOP || scale === SCALE_LARGE_MOBILE;
 
     useGSAP(() => {
         if(showlargeMacbook){
@@ -83,4 +85,4 @@ const ModelSwitcher = ({scale, isMobile}) => {
   )
 }
 
-export default ModelSwitcher
+export default ModelSwitcher 
